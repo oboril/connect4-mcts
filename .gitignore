@@ -1,0 +1,5 @@
+Cargo.lock
+target/*
+pkg/*
+!pkg/connect4_mcts.js
+!pkg/connect4_mcts_bg.wasm

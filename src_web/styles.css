@@ -1,0 +1,81 @@
+html {
+    font-family: sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#board {
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-columns: repeat(7, auto);
+    grid-template-rows: repeat(6, auto);
+
+    padding: 0.1rem;
+    outline: 4px solid green;
+    background-color: greenyellow;
+
+    border-radius: 0.3em;
+}
+
+#board>span {
+    height: 7rem;
+    width: 7rem;
+
+    margin: 0.1rem;
+
+    position: relative;
+}
+
+#board>span::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+
+    border-radius: 3rem;
+    background-color: green;
+    margin: 0.5rem;
+
+    box-shadow: 0.2rem 0.15rem 0.08rem darkgreen;
+}
+
+#board>span>span {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 10;
+
+    background-size: 100% 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    transform: scale(0%);
+    transition: transform 0.2s ease;
+}
+
+#board>span[token="red"]>span {
+    background-image: url("token_red.png");
+}
+
+#board>span[token="blue"]>span {
+    background-image: url("token_blue.png");
+}
+
+#board>span[token_placed]>span {
+    transform: scale(80%);
+}
+
+#board>span[hover]>span {
+    transform: scale(60%);
+}
