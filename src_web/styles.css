@@ -79,3 +79,7 @@ body {
 #board>span[hover]>span {
     transform: scale(60%);
 }
+
+#settings {
+    margin: 1rem;
+}

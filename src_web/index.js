@@ -10,7 +10,7 @@ function get_color(player){
 $("#board").ready(function() {   
     for (let row = 0; row < 6; row++){
         for (let column = 0; column < 7; column++){
-            let elem = $("<span></span>").text(`${row+1}/${column+1}`);
+            let elem = $("<span></span>")//.text(`${row+1}/${column+1}`);
             elem.append($("<span></span>"))
 
             elem.click(function() {clicked_board(column)})
@@ -83,6 +83,9 @@ let player = 1;
     console.log("Best move is: ", best_move+1);
 }*/
 function clicked_board(column) {
+
+    let iters = $('#inp-difficulty').val();
+    iters = parseInt(iters);
     
     drop_token(column, player)
 
@@ -90,7 +93,7 @@ function clicked_board(column) {
     if (score == 1) { setTimeout(function() { alert("Red won!"); }, 300); return; }
     if (score == -1) { setTimeout(function() { alert("Blue won!"); }, 300); return; }
 
-    let best_move = get_next_best_move(board, -player, 300);
+    let best_move = get_next_best_move(board, -player, iters);
 
     drop_token(best_move, -player) 
     score = check_score(board);
