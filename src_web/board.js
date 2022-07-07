@@ -4,9 +4,11 @@ export async function init_wasm(){
     await init();
 }
 
-export const EMPTY_BOARD = {
-    entries: [[0, 0, 0, 0, 0, 0, 0],[0, 0, 0, 0, 0, 0, 0],[0, 0, 0, 0, 0, 0, 0],[0, 0, 0, 0, 0, 0, 0],[0, 0, 0, 0, 0, 0, 0],[0, 0, 0, 0, 0, 0, 0]],
-    top: [5,5,5,5,5,5,5]
+export function empty_board(){
+    return {
+        entries: [[0, 0, 0, 0, 0, 0, 0],[0, 0, 0, 0, 0, 0, 0],[0, 0, 0, 0, 0, 0, 0],[0, 0, 0, 0, 0, 0, 0],[0, 0, 0, 0, 0, 0, 0],[0, 0, 0, 0, 0, 0, 0]],
+        top: [5,5,5,5,5,5,5]
+    };
 }
 
 function get_board_string(board){

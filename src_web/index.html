@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title></title>
   <link href="styles.css" rel="stylesheet" />
 
@@ -12,10 +13,58 @@
 <body>
   <h1>Connect 4!</h1>
 
+  <div id="players">
+    <h2 id="human-name">You</h2>
+    <img src="player_human.png" id="human-icon" class="player-icon">
+    <h2 id="human-score">0</h2>
+    <h2>:</h2>
+    <h2 id="bot-score">0</h2>
+    <img src="player_arnie.png" id="bot-icon" class="player-icon">
+    <h2 id="bot-name">Arnie</h2>
+  </div>
+
   <div id="board"></div>
 
   <div id="settings">
-    <label for="inp-difficulty">Set bot difficulty: </label>
-    <input id="inp-difficulty" type="text" value="100">
+    <button id="change-bot">Change bot</button>
+    <button id="new-game">New game</button>
+  </div>
+
+  <div id="change-bot-dialog">
+    <div id="change-bot-dialog-inner">
+      <h2>CHOOSE BOT</h2>
+      <div id="select-bot-veronica">
+        <h2>Veronica</h2>
+        <img src="player_veronica.png">
+        <p>Do you really think you can take on Veronica?</p>
+      </div>
+      <div id="select-bot-anna">
+        <h2>Anna</h2>
+        <img src="player_anna.png">
+        <p>Anna has been playing for a while now and she knows what's up.</p>
+      </div>
+      <div id="select-bot-jan">
+        <h2>Jan</h2>
+        <img src="player_jan.png">
+        <p>I play as well as I can, but we all sometimes make mistakes.</p>
+      </div>
+      <div id="select-bot-arnie">
+        <h2>Arnie</h2>
+        <img src="player_arnie.png">
+        <p>Arnie loves to play with his children, and they have beat him easily.</p>
+      </div>
+      <div id="select-bot-puffy">
+        <h2>Puffy</h2>
+        <img src="player_puffy.png">
+        <p>Puffy doesn't have to win to enjoy the game.</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="result-popup">
+    <div id="result-popup-inner">
+      <h1 id="result-text">You won!</h1>
+      <button id="result-ok">OK</button>
+    </div>
   </div>
 </body>
